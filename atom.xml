@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://glog.hjy2005.xyz</id>
+    <id>https://blog2.hjy2005.xyz</id>
     <title>梦里徜徉的博客</title>
-    <updated>2020-09-25T12:05:36.398Z</updated>
+    <updated>2020-09-25T12:25:49.833Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://glog.hjy2005.xyz"/>
-    <link rel="self" href="https://glog.hjy2005.xyz/atom.xml"/>
+    <link rel="alternate" href="https://blog2.hjy2005.xyz"/>
+    <link rel="self" href="https://blog2.hjy2005.xyz/atom.xml"/>
     <subtitle>这是一个记录我文化课和OI生活的地方，网站内容在不断丰富哦~欢迎来访！</subtitle>
-    <logo>https://glog.hjy2005.xyz/images/avatar.png</logo>
-    <icon>https://glog.hjy2005.xyz/favicon.ico</icon>
+    <logo>https://blog2.hjy2005.xyz/images/avatar.png</logo>
+    <icon>https://blog2.hjy2005.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 梦里徜徉的博客</rights>
     <entry>
         <title type="html"><![CDATA[并查集]]></title>
-        <id>https://glog.hjy2005.xyz/post/bing-cha-ji/</id>
-        <link href="https://glog.hjy2005.xyz/post/bing-cha-ji/">
+        <id>https://blog2.hjy2005.xyz/post/bing-cha-ji/</id>
+        <link href="https://blog2.hjy2005.xyz/post/bing-cha-ji/">
         </link>
         <updated>2020-08-06T02:26:07.000Z</updated>
         <summary type="html"><![CDATA[<h3 id="并查集模板">并查集模板</h3>
@@ -74,8 +74,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷P1287-美国血统 题解]]></title>
-        <id>https://glog.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/</id>
-        <link href="https://glog.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/">
+        <id>https://blog2.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/</id>
+        <link href="https://blog2.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/">
         </link>
         <updated>2020-08-04T03:00:28.000Z</updated>
         <summary type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1827">https://www.luogu.com.cn/problem/P1827</a><br>
@@ -124,8 +124,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[九上语文文言文注释]]></title>
-        <id>https://glog.hjy2005.xyz/post/jiushang-chinese/</id>
-        <link href="https://glog.hjy2005.xyz/post/jiushang-chinese/">
+        <id>https://blog2.hjy2005.xyz/post/jiushang-chinese/</id>
+        <link href="https://blog2.hjy2005.xyz/post/jiushang-chinese/">
         </link>
         <updated>2020-07-24T13:04:01.000Z</updated>
         <summary type="html"><![CDATA[<p>以图片形式展示了九上语文文言文注释 <s>不要嫌弃我手抖</s></p>
@@ -143,8 +143,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[初三化学学习笔记]]></title>
-        <id>https://glog.hjy2005.xyz/post/huaxue-note/</id>
-        <link href="https://glog.hjy2005.xyz/post/huaxue-note/">
+        <id>https://blog2.hjy2005.xyz/post/huaxue-note/</id>
+        <link href="https://blog2.hjy2005.xyz/post/huaxue-note/">
         </link>
         <updated>2020-07-18T08:45:30.000Z</updated>
         <summary type="html"><![CDATA[<p>已弃坑。</p>
@@ -166,8 +166,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷P1351-联合权值 题解]]></title>
-        <id>https://glog.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/</id>
-        <link href="https://glog.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/">
+        <id>https://blog2.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/</id>
+        <link href="https://blog2.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/">
         </link>
         <updated>2020-06-20T08:13:59.000Z</updated>
         <summary type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1351">https://www.luogu.com.cn/problem/P1351</a></p>
@@ -311,8 +311,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[CF34B Sale题解]]></title>
-        <id>https://glog.hjy2005.xyz/post/cf34b-sale-ti-jie/</id>
-        <link href="https://glog.hjy2005.xyz/post/cf34b-sale-ti-jie/">
+        <id>https://blog2.hjy2005.xyz/post/cf34b-sale-ti-jie/</id>
+        <link href="https://blog2.hjy2005.xyz/post/cf34b-sale-ti-jie/">
         </link>
         <updated>2020-03-15T09:52:02.000Z</updated>
         <summary type="html"><![CDATA[<p>原题链接：<a href="http://codeforces.com/problemset/problem/34/B">http://codeforces.com/problemset/problem/34/B</a><br>
@@ -346,8 +346,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷P1216-数字三角形 题解]]></title>
-        <id>https://glog.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/</id>
-        <link href="https://glog.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/">
+        <id>https://blog2.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/</id>
+        <link href="https://blog2.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/">
         </link>
         <updated>2020-02-29T02:22:54.000Z</updated>
         <summary type="html"><![CDATA[<p>写题解是个好习惯，也不失为一个充实博客的好办法😏。</p>
@@ -382,8 +382,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[成功创建博客！]]></title>
-        <id>https://glog.hjy2005.xyz/post/ce-shi/</id>
-        <link href="https://glog.hjy2005.xyz/post/ce-shi/">
+        <id>https://blog2.hjy2005.xyz/post/ce-shi/</id>
+        <link href="https://blog2.hjy2005.xyz/post/ce-shi/">
         </link>
         <updated>2020-02-27T09:26:14.000Z</updated>
         <summary type="html"><![CDATA[<p>2020年2月27日，在rui_er的帮助下，折腾了蛮久的时间，我成功创建了博客。</p>
