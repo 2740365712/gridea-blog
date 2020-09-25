@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://glog.hjy2005.xyz</id>
+    <title>梦里徜徉的博客</title>
+    <updated>2020-09-25T12:05:36.398Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://glog.hjy2005.xyz"/>
+    <link rel="self" href="https://glog.hjy2005.xyz/atom.xml"/>
+    <subtitle>这是一个记录我文化课和OI生活的地方，网站内容在不断丰富哦~欢迎来访！</subtitle>
+    <logo>https://glog.hjy2005.xyz/images/avatar.png</logo>
+    <icon>https://glog.hjy2005.xyz/favicon.ico</icon>
+    <rights>All rights reserved 2020, 梦里徜徉的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[并查集]]></title>
+        <id>https://glog.hjy2005.xyz/post/bing-cha-ji/</id>
+        <link href="https://glog.hjy2005.xyz/post/bing-cha-ji/">
+        </link>
+        <updated>2020-08-06T02:26:07.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="并查集模板">并查集模板</h3>
+<p>模板题：<a href="https://www.luogu.com.cn/problem/P3367">Luogu P3367 【模板】并查集</a><br>
+在并查集中主要有两个操作：合并和查找，其中查找需要用递归实现。（待填坑）</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="并查集模板">并查集模板</h3>
+<p>模板题：<a href="https://www.luogu.com.cn/problem/P3367">Luogu P3367 【模板】并查集</a><br>
+在并查集中主要有两个操作：合并和查找，其中查找需要用递归实现。（待填坑）</p>
+<!-- more -->
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">Code:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;cmath&gt;
+#include &lt;algorithm&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;iomanip&gt;
+#include &lt;cctype&gt;//含isdigit
+//#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+int p[10005];
+inline int read() {
+	char ch=getchar();
+	int s=0,w=1;
+	while(ch&lt;'0'||ch&gt;'9'){if(ch=='-') w=-1; ch=getchar();}
+	while(ch&gt;='0'&amp;&amp;ch&lt;='9'){s=s*10+(ch-'0'); ch=getchar();}
+	return s*w;//快读 
+}
+inline int find(int x){
+	if(x==p[x]) return x;//如果x的上司是他自己， 那就是意味着x是老板 
+	return p[x]=find(p[x]);//如果x的上司不是他自己，那就直接找出来x的老板，并且把x的老板直接作为x的上司（路径压缩） 
+}
+int main() {
+	int n,m;
+	n=read(),m=read();
+	for(int i=0;i&lt;=n;i++) p[i]=i;//初始化，每个人的老板都是自己
+	while(m--){
+		int x,y,z;
+		z=read(),x=read(),y=read();
+		int tx=find(x),ty=find(y);//tx代表x的老板，ty代表y的老板
+		if(z==1){
+			if(tx!=ty) p[tx]=ty;//合并操作：让y的老板成为x的老板的老板
+		}
+		if(z==2){
+			tx==ty ? printf(&quot;Y\n&quot;) : printf(&quot;N\n&quot;);
+		}
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷P1287-美国血统 题解]]></title>
+        <id>https://glog.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/</id>
+        <link href="https://glog.hjy2005.xyz/post/luo-gu-p1287-mei-guo-xie-tong-ti-jie/">
+        </link>
+        <updated>2020-08-04T03:00:28.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1827">https://www.luogu.com.cn/problem/P1827</a><br>
+其实这一题就是知道一颗二叉树的中序和前序遍历，求后序遍历。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1827">https://www.luogu.com.cn/problem/P1827</a><br>
+其实这一题就是知道一颗二叉树的中序和前序遍历，求后序遍历。</p>
+<!-- more -->
+<h3 id="输入格式">输入格式</h3>
+<p>第一行： 树的中序遍历<br>
+第二行： 同样的树的前序遍历</p>
+<h3 id="输出格式">输出格式</h3>
+<p>单独的一行表示该树的后序遍历。</p>
+<h3 id="输入输出样例">输入输出样例</h3>
+<h4 id="输入-1">输入 #1</h4>
+<pre><code>ABEDFCHG
+CBADEFGH 
+</code></pre>
+<h4 id="输出-1">输出 #1</h4>
+<pre><code>AEFDBHGC
+</code></pre>
+<h3 id="code">Code:</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+string s1,s2;
+void fun(int a,int b,int c,int d){
+	if(a&gt;b) return ;
+	for(int i=c;i&lt;=d;i++){
+		if(s1[i]==s2[a]){
+			fun(a+1,a+1+i-1-c,c,i-1);
+			fun(a+1+i-c,b,i+1,d);
+			cout&lt;&lt;s2[a];
+			break;
+		}
+	}
+} 
+int main(){
+	cin&gt;&gt;s1&gt;&gt;s2;
+	int l1=s1.size()-1,l2=s2.size()-1;
+	fun(0,l1,0,l2);
+	return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[九上语文文言文注释]]></title>
+        <id>https://glog.hjy2005.xyz/post/jiushang-chinese/</id>
+        <link href="https://glog.hjy2005.xyz/post/jiushang-chinese/">
+        </link>
+        <updated>2020-07-24T13:04:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>以图片形式展示了九上语文文言文注释 <s>不要嫌弃我手抖</s></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>以图片形式展示了九上语文文言文注释 <s>不要嫌弃我手抖</s></p>
+<!-- more -->
+<p><img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/20200724210353.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/20200724211040.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_212410.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205641.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205707.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205729.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205750.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[初三化学学习笔记]]></title>
+        <id>https://glog.hjy2005.xyz/post/huaxue-note/</id>
+        <link href="https://glog.hjy2005.xyz/post/huaxue-note/">
+        </link>
+        <updated>2020-07-18T08:45:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>已弃坑。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>已弃坑。</p>
+<!-- more -->
+<h3 id="物质的变化和实质">物质的变化和实质</h3>
+<p>物理变化：物质本质不变，不生成新物质<br>
+化学变化：物质本质变化，生成新物质<br>
+区分化学变化和物理变化的方法：看变化后是否生成了新物质</p>
+<blockquote>
+<p>例：<br>
+水烧开:水还是水，是物理变化<br>
+木柴烧成灰：木柴变成了灰，是化学变化</p>
+</blockquote>
+<p>这一大块的手写笔记：<br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/20200803213105.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷P1351-联合权值 题解]]></title>
+        <id>https://glog.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/</id>
+        <link href="https://glog.hjy2005.xyz/post/ti-jie-luo-gu-p1351-lian-he-quan-zhi/">
+        </link>
+        <updated>2020-06-20T08:13:59.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1351">https://www.luogu.com.cn/problem/P1351</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1351">https://www.luogu.com.cn/problem/P1351</a></p>
+<!-- more -->
+<h3 id="分块代码思路">分块代码&amp;思路</h3>
+<p>仔细观察这个题 我们可以发现一个令人振奋的结论：对于一个点，与它相连的其他所有点之间的距离恰恰是2<br>
+如果觉得有点难以理解，请看下图：<br>
+<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/P1351%E8%81%94%E5%90%88%E6%9D%83%E5%80%BC-%E9%A2%98%E8%A7%A3%E9%85%8D%E5%9B%BE-1.png" alt="" loading="lazy"><br>
+在这张图中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 的路径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>−</mo><mo>&gt;</mo><mn>1</mn><mo>−</mo><mo>&gt;</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2-&gt;1-&gt;3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 其他点也是同样的<br>
+因此 我们可以用一个 <code>vector</code> 储存所有点，再建一个数组表示这个点的权值  于是输入就解决了！</p>
+<pre><code class="language-cpp">vector &lt;int&gt; t[200002];
+int tt[200002];//注意这个数组要么定义全局变量 要么用memset初始化，我在我的代码中是定义的全局变量
+for(int i=0;i&lt;n-1;i++){
+	int x,y;
+	cin&gt;&gt;x&gt;&gt;y;
+	t[x].push_back(y);
+	t[y].push_back(x);
+}
+for(int i=1;i&lt;=n;i++){
+	cin&gt;&gt;tt[i];
+}
+</code></pre>
+<p>接下来就是对每个点相连的点两两配对 计算联合权值的和，同时维护一个最大值<br>
+那怎么实现呢？<br>
+当然我们可以写两层 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">for</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 循环解决，类似于这样：</p>
+<pre><code class="language-cpp">for(int i=0;i&lt;t[now].size();i++){
+    for(int j=i+1;j&lt;t[now].size();j++){
+        sum=sum+tt[t[now][i]]*tt[t[now][j]*2;
+        sum%=10007;
+        maxx=max(maxx,sum);
+    }
+}
+</code></pre>
+<p>但如果这样写的话，加上枚举每一个点，那就是3重循环了。现在请你想一想 有没有更好的办法呢？</p>
+<p>主体代码：</p>
+<pre><code class="language-cpp">for(int i=1;i&lt;=n;i++){//枚举每一个点
+	int pre=0;
+	mx1=0,mx2=0;//最大值和次大值
+	for(int j=0;j&lt;t[i].size();j++){
+		int x=t[i][j];
+		tot=(tot+2*pre*tt[x])%10007;//将之前所有权值之和乘以当前点的权值，再加进权值总和里
+		pre=(tt[x]+pre)%10007;//将当前点的权值加进权值和
+		if(tt[x]&gt;mx1){
+			mx2=mx1;
+			mx1=tt[x];//更新最大值后，将原最大值赋值给次大值
+		}else if(tt[x]&gt;mx2){
+			mx2=tt[x];//更新次大值
+		}
+	}
+    ans=max(ans,mx1*mx2);//更新最终最大值
+}
+</code></pre>
+<p>至此，本题解决。</p>
+<h3 id="完整代码">完整代码</h3>
+<p>上文已经分块讲好了思路，因此完整代码没有注释👀</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+typedef long long ll;
+vector &lt;int&gt; t[200002];
+int tot,ans,mx1,mx2,tt[200002];
+int main(){
+	int n;
+	cin&gt;&gt;n;
+	for(int i=0;i&lt;n-1;i++){
+		int x,y;
+		cin&gt;&gt;x&gt;&gt;y;
+		t[x].push_back(y);
+		t[y].push_back(x);
+	}
+	for(int i=1;i&lt;=n;i++){
+		cin&gt;&gt;tt[i];
+	}
+	for(int i=1;i&lt;=n;i++){
+		int pre=0;
+		mx1=0,mx2=0;
+		for(int j=0;j&lt;t[i].size();j++){
+			int x=t[i][j];
+			tot=(tot+2*pre*tt[x])%10007;
+			pre=(tt[x]+pre)%10007;
+			if(tt[x]&gt;mx1){
+				mx2=mx1;
+				mx1=tt[x];
+			}else if(tt[x]&gt;mx2){
+				mx2=tt[x];
+			}
+		}
+		ans=max(ans,mx1*mx2);
+	}
+	cout&lt;&lt;ans&lt;&lt;&quot; &quot;&lt;&lt;tot;
+	return 0;
+}
+</code></pre>
+<p>附上 <code>DFS</code> 解法<br>
+<s>DFS比我前面的解法还慢了点</s><br>
+如果想让程序跑快点可以用 <code>快读+O2</code> 或者用 <code>scanf</code> 和 <code>printf</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+vector &lt;int&gt; t[200005];
+int tot,mx1,tt[200005];
+void dfs(int x,int f) {
+	int pre=tt[f];
+	int mx2=pre;
+	int len=t[x].size();
+	for(int i=0; i&lt;len; i++) {
+		int tmp=t[x][i];
+		if(tmp!=f) {
+			dfs(tmp,x);
+			tot=(tot+tt[tmp]*pre*2)%10007;
+			pre=(pre+tt[tmp])%10007;
+			mx1=max(mx1,tt[tmp]*mx2);
+			mx2=max(mx2,tt[tmp]);
+		}
+	}
+}
+int main() {
+	int n;
+	cin&gt;&gt;n;
+	for(int i=0; i&lt;n-1; i++) {
+		int x,y;
+		cin&gt;&gt;x&gt;&gt;y;
+		t[x].push_back(y);
+		t[y].push_back(x);
+	}
+	for(int i=1; i&lt;=n; i++) {
+		cin&gt;&gt;tt[i];
+	}
+	dfs(n,0);
+	cout&lt;&lt;mx1&lt;&lt;&quot; &quot;&lt;&lt;tot;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CF34B Sale题解]]></title>
+        <id>https://glog.hjy2005.xyz/post/cf34b-sale-ti-jie/</id>
+        <link href="https://glog.hjy2005.xyz/post/cf34b-sale-ti-jie/">
+        </link>
+        <updated>2020-03-15T09:52:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>原题链接：<a href="http://codeforces.com/problemset/problem/34/B">http://codeforces.com/problemset/problem/34/B</a><br>
+洛谷RemoteJudge链接：<a href="https://www.luogu.com.cn/problem/CF34B">https://www.luogu.com.cn/problem/CF34B</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>原题链接：<a href="http://codeforces.com/problemset/problem/34/B">http://codeforces.com/problemset/problem/34/B</a><br>
+洛谷RemoteJudge链接：<a href="https://www.luogu.com.cn/problem/CF34B">https://www.luogu.com.cn/problem/CF34B</a></p>
+<!-- more -->
+<p>蒟蒻来写题解啦！！  一开始<s>我连题都没看懂</s>，仔细看了数据才明白题目的意思。</p>
+<hr>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+typedef long long ll;
+int n,m,ans;
+int a[105];
+int main(){
+	cin&gt;&gt;n&gt;&gt;m;//输入
+	for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];//还是输入
+	sort(a,a+n);//排序函数，需要&lt;algorithm&gt;头文件，万能头也可以用，用法：数组排序开始地址，数组排序结束地址。默认为从小到大，如果要从大到小或者结构体排序要写个bool函数。
+	for(int i=0;i&lt;m;i++){
+		if(a[i]&lt;0)
+			ans-=a[i];//题中有说到“最多买m”，所以选负数的买，并且数越小越好。如果是正数就不要买，买了反而亏。这里等于不等于0都无所谓。
+	}
+	cout&lt;&lt;ans;//输出答案
+	return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷P1216-数字三角形 题解]]></title>
+        <id>https://glog.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/</id>
+        <link href="https://glog.hjy2005.xyz/post/luo-gu-p1216-shu-zi-san-jiao-xing-ti-jie/">
+        </link>
+        <updated>2020-02-29T02:22:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>写题解是个好习惯，也不失为一个充实博客的好办法😏。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>写题解是个好习惯，也不失为一个充实博客的好办法😏。</p>
+<!-- more -->
+<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1216">https://www.luogu.com.cn/problem/P1216</a><br>
+针对这一题，我们可以使用记忆化搜索的方式去做。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;//万能头文件
+using namespace std;
+int r;//行数
+int dp[1005][1005];//实现记忆化搜索的数组
+int inp[1005][1005];//存放输入数据的数组
+int dfs(int x,int y) {
+	if(dp[x][y]!=-1) return dp[x][y];//如果已经求过，直接调用dp数组
+	if(x==r-1) return dp[x][y]=inp[x][y];//如果到了最后一层，返回总和
+	return dp[x][y]=inp[x][y]+max(dfs(x+1,y),dfs(x+1,y+1));//一般情况，计算出到目前为止走过的数字的和，并保存到dp数组
+}
+int main() {
+	cin&gt;&gt;r;
+	for(int i=0; i&lt;r; i++) {
+		for(int j=0; j&lt;=i; j++) {
+			cin&gt;&gt;inp[i][j];//输入
+			dp[i][j]=-1;//将dp数组初始化为-1
+		}
+	}
+	cout&lt;&lt;dfs(0,0);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[成功创建博客！]]></title>
+        <id>https://glog.hjy2005.xyz/post/ce-shi/</id>
+        <link href="https://glog.hjy2005.xyz/post/ce-shi/">
+        </link>
+        <updated>2020-02-27T09:26:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>2020年2月27日，在rui_er的帮助下，折腾了蛮久的时间，我成功创建了博客。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>2020年2月27日，在rui_er的帮助下，折腾了蛮久的时间，我成功创建了博客。</p>
+<!-- more -->
+<p>大家好呀！</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main(){
+    std::cout&lt;&lt;&quot;Hello everyone!&quot;;
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+</feed>
