@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog2.hjy2005.xyz</id>
     <title>梦里徜徉的博客</title>
-    <updated>2020-10-01T14:43:50.563Z</updated>
+    <updated>2020-10-03T02:36:18.844Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog2.hjy2005.xyz"/>
     <link rel="self" href="https://blog2.hjy2005.xyz/atom.xml"/>
@@ -10,6 +10,71 @@
     <logo>https://blog2.hjy2005.xyz/images/avatar.png</logo>
     <icon>https://blog2.hjy2005.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 梦里徜徉的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[洛谷P1983-车站分级 题解]]></title>
+        <id>https://blog2.hjy2005.xyz/post/luo-gu-p1983-che-zhan-fen-ji-ti-jie/</id>
+        <link href="https://blog2.hjy2005.xyz/post/luo-gu-p1983-che-zhan-fen-ji-ti-jie/">
+        </link>
+        <updated>2020-10-03T02:26:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>这其实是一道暴力就能A的题，<s>所以为什么要用拓扑排序（事实是我不会）</s></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这其实是一道暴力就能A的题，<s>所以为什么要用拓扑排序（事实是我不会）</s></p>
+<!-- more -->
+<p>题目链接：<a href="https://www.luogu.com.cn/problem/P1983">https://www.luogu.com.cn/problem/P1983</a><br>
+思路来源：<a href="https://www.luogu.com.cn/blog/WT666-666/solution-p1983">https://www.luogu.com.cn/blog/WT666-666/solution-p1983</a><br>
+虽然这位dalao的题解里留了不少坑（幸好我没抄），但是他的思路给了我很大启发。</p>
+<h3 id="解法">解法</h3>
+<p>在完成输入后，我们可以掌握某辆车停靠和不停靠的车站。由于车站最低级别为1，所以说要把初始级别设为1，这样之后我们算出来车站的最高级别就会是车站分出来的级别。</p>
+<p>那么怎么来推算每个车站的级别呢？<br>
+假设停靠的站点为1，不停靠的站点为0，当一辆车的情况是这样的时候：<code>1 0 0 0 1</code> 那么外面两个车站的等级显然是高于中间三个的，否则的话就全都要停靠了。<br>
+所以说我们就可以从不停靠的车站入手，将停靠的车站的等级改为不停靠的车站的最高等级+1，使其符合条件。</p>
+<p>现在你可以先试着自己写下代码了，如果有问题再往下看。</p>
+<h3 id="代码含注释">代码（含注释）</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int lv[1005],tot[1005],train[1005][1005],stop[1005][1005];//车站的级别 某一辆车停靠的站点数 某辆车的某个站点的编号 某辆车是否停靠某个站点
+int main(){
+    int n,m;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=0;i&lt;n;i++) lv[i]=1;//每个车站的最低等级为1
+    for(int i=0;i&lt;m;i++){
+        int s;
+        scanf(&quot;%d&quot;,&amp;s);
+        tot[i]=s;
+        for(int j=0;j&lt;s;j++){
+            scanf(&quot;%d&quot;,&amp;train[i][j]);
+            stop[i][train[i][j]]=1;
+        }
+    }
+    bool finish=false;
+    while(finish==false){
+        //cout&lt;&lt;&quot;ok&quot;&lt;&lt;endl;
+        finish=true;
+        for(int i=0;i&lt;m;i++){
+            //cout&lt;&lt;&quot;ok2&quot;&lt;&lt;endl;
+            int _max=-1;
+            for(int j=train[i][0];j&lt;=train[i][tot[i]-1];j++){
+                //cout&lt;&lt;&quot;ok3&quot;&lt;&lt;endl;
+                if(stop[i][j]==0) _max=max(_max,lv[j]);//找出不停靠的车站的最大级别
+            }
+            for(int j=0;j&lt;tot[i];j++){//题目中提到：如果这趟车次停靠了火车站x，
+                if(lv[train[i][j]]&lt;=_max){//则始发站、终点站之间所有级别大于等于火车站x的都必须停靠。
+                    lv[train[i][j]]=_max+1,finish=false;//所以反过来，如果某个站停靠了，那么它至少也要比没停靠的站中的最大值大。
+                    //cout&lt;&lt;&quot;lv changed&quot;&lt;&lt;&quot; &quot;&lt;&lt;_max&lt;&lt;endl;
+                }//当有一个站被修改了 就证明这个过程没完成
+            }
+            _max+=1;
+        }
+    }
+    int _max=-1;
+	for(int i=0;i&lt;n;i++) _max=max(_max,lv[i]);
+	printf(&quot;%d&quot;,_max);
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[并查集]]></title>
         <id>https://blog2.hjy2005.xyz/post/bing-cha-ji/</id>
