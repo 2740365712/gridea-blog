@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog2.hjy2005.xyz</id>
     <title>梦里徜徉的博客</title>
-    <updated>2020-10-16T13:21:59.986Z</updated>
+    <updated>2020-10-16T14:13:54.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog2.hjy2005.xyz"/>
     <link rel="self" href="https://blog2.hjy2005.xyz/atom.xml"/>
@@ -262,29 +262,6 @@ int main(){
 <img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205707.jpg" alt="" loading="lazy"><br>
 <img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205729.jpg" alt="" loading="lazy"><br>
 <img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/IMG_20200724_205750.jpg" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[初三化学学习笔记]]></title>
-        <id>https://blog2.hjy2005.xyz/post/huaxue-note/</id>
-        <link href="https://blog2.hjy2005.xyz/post/huaxue-note/">
-        </link>
-        <updated>2020-07-18T08:45:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>已弃坑。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>已弃坑。</p>
-<!-- more -->
-<h3 id="物质的变化和实质">物质的变化和实质</h3>
-<p>物理变化：物质本质不变，不生成新物质<br>
-化学变化：物质本质变化，生成新物质<br>
-区分化学变化和物理变化的方法：看变化后是否生成了新物质</p>
-<blockquote>
-<p>例：<br>
-水烧开:水还是水，是物理变化<br>
-木柴烧成灰：木柴变成了灰，是化学变化</p>
-</blockquote>
-<p>这一大块的手写笔记：<br>
-<img src="https://cdn.jsdelivr.net/gh/2740365712/img-bed/img/20200803213105.jpg" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
